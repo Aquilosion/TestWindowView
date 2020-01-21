@@ -34,6 +34,8 @@ class MainViewController: UIViewController {
 				self.updateStyle()
 			}
 		}
+		
+		modalPresentationCapturesStatusBarAppearance = true
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {

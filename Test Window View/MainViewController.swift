@@ -18,10 +18,17 @@ class MainViewController: UIViewController {
 		return Self.styles[styleIndex % Self.styles.count]
 	}
 	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+
+		modalPresentationCapturesStatusBarAppearance = true
+	}
+	
 	private func updateStyle() {
 		styleIndex += 1
 		
 		setNeedsStatusBarAppearanceUpdate()
+		overlayWindow?.rootViewController?.setNeedsStatusBarAppearanceUpdate()
 	}
 	
 	private var timer: Timer?

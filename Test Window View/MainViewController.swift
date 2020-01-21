@@ -69,27 +69,3 @@ class MainViewController: UIViewController {
 	
 }
 
-private final class OverlayRootViewController: UIViewController {
-	
-	var proxy: UIViewController?
-	
-	init() {
-		self.proxy = UIApplication.shared.delegate?.window??.rootViewController
-		
-		super.init(nibName: nil, bundle: nil)
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
-	override var childForStatusBarStyle: UIViewController? {
-		return proxy?.childForStatusBarStyle ?? proxy
-	}
-	
-	override var childForStatusBarHidden: UIViewController? {
-		return proxy?.childForStatusBarHidden ?? proxy
-	}
-	
-}
-
